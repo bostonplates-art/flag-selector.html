@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flag Selector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    #flag {
+      width: 200px;
+      height: 120px;
+      margin: 20px auto;
+      border: 2px solid #333;
+    }
+    #price {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 20px;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Choose Your Flag</h1>
+  
+  <select id="flagSelect">
+    <option value="">-- Select a flag --</option>
+    <option value="Red" data-price="10">Red (£10)</option>
+    <option value="White" data-price="15">White (£15)</option>
+    <option value="Blue" data-price="20">Blue (£20)</option>
+  </select>
+  
+  <div id="flag"></div>
+  <div id="price">£0</div>
+  <button id="buyNow">Buy Now</button>
+
+  <script>
+    const flagSelect = document.getElementById("flagSelect");
+    const flagDiv = document.getElementById("flag");
+    const priceDiv = document.getElementById("price");
+    const buyBtn = document.getElementById("buyNow");
+
+    let selected = { flag: "", price: 0 };
+
+    flagSelect.addEventListener("change", (e) => {
+      const option = e.target.selectedOptions[0];
+      selected.flag = option.value;
+      selected.price = option.dataset.price || 0;
+
+      flagDiv.style.background = option.value.toLowerCase();
+      priceDiv.textContent = "£" + selected.price;
+    });
+
+    buyBtn.addEventListener("click", () => {
+      if (!selected.flag) {
+        alert("Please select a flag first");
+        return;
+      }
+      // Send to parent Wix site
+      window.parent.postMessage(selected, "*");
+    });
+  </script>
+</body>
+</html>
