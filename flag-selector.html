@@ -1,89 +1,73 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="UTF-8">
+  <title>Flag Selector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    #flag {
+      width: 200px;
+      height: 120px;
+      margin: 20px auto;
+      border: 2px solid #333;
+    }
+    #price {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 20px;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Flag Selector&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: Arial, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#flag {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 200px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 120px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 20px auto;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 2px solid #333;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#price {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 10px 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>button {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 10px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: black;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Choose Your Flag&lt;/h1&gt;</p>
-<p class="p2"><span class="Apple-converted-space">  </span></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;select id="flagSelect"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value=""&gt;-- Select a flag --&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="Red" data-price="10"&gt;Red (£10)&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="White" data-price="15"&gt;White (£15)&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="Blue" data-price="20"&gt;Blue (£20)&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/select&gt;</p>
-<p class="p2"><span class="Apple-converted-space">  </span></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="flag"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="price"&gt;£0&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;button id="buyNow"&gt;Buy Now&lt;/button&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const flagSelect = document.getElementById("flagSelect");</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const flagDiv = document.getElementById("flag");</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const priceDiv = document.getElementById("price");</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const buyBtn = document.getElementById("buyNow");</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>let selected = { flag: "", price: 0 };</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>flagSelect.addEventListener("change", (e) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const option = e.target.selectedOptions[0];</p>
-<p class="p1"><span class="Apple-converted-space">      </span>selected.flag = option.value;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>selected.price = option.dataset.price || 0;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>flagDiv.style.background = option.value.toLowerCase();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>priceDiv.textContent = "£" + selected.price;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>buyBtn.addEventListener("click", () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if (!selected.flag) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>alert("Please select a flag first");</p>
-<p class="p1"><span class="Apple-converted-space">        </span>return;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>// Send to parent Wix site</p>
-<p class="p1"><span class="Apple-converted-space">      </span>window.parent.postMessage(selected, "*");</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+  <h1>Choose Your Flag</h1>
+  
+  <select id="flagSelect">
+    <option value="">-- Select a flag --</option>
+    <option value="Red" data-price="10">Red (£10)</option>
+    <option value="White" data-price="15">White (£15)</option>
+    <option value="Blue" data-price="20">Blue (£20)</option>
+  </select>
+  
+  <div id="flag"></div>
+  <div id="price">£0</div>
+  <button id="buyNow">Buy Now</button>
+
+  <script>
+    const flagSelect = document.getElementById("flagSelect");
+    const flagDiv = document.getElementById("flag");
+    const priceDiv = document.getElementById("price");
+    const buyBtn = document.getElementById("buyNow");
+
+    let selected = { flag: "", price: 0 };
+
+    flagSelect.addEventListener("change", (e) => {
+      const option = e.target.selectedOptions[0];
+      selected.flag = option.value;
+      selected.price = option.dataset.price || 0;
+
+      flagDiv.style.background = option.value.toLowerCase();
+      priceDiv.textContent = "£" + selected.price;
+    });
+
+    buyBtn.addEventListener("click", () => {
+      if (!selected.flag) {
+        alert("Please select a flag first");
+        return;
+      }
+      // Send to parent Wix site
+      window.parent.postMessage(selected, "*");
+    });
+  </script>
 </body>
 </html>
